@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
 
   --teal:      #2f7e78;
@@ -22,6 +26,13 @@
 }
 
 
+html, body {
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -32,7 +43,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  box-sizing: border-box;
 }
 
 .container {

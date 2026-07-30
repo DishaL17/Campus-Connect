@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root{
     --teal-1:#4aa39c;
     --teal-2:#6fc5bd;
@@ -19,8 +23,16 @@
 }
 
 
-body{
+html, body {
     margin:0;
+    padding:0;
+    width:100%;
+    overflow-x:hidden;
+    overscroll-behavior-x:none;
+    overscroll-behavior-y:auto;
+}
+
+body{
     min-height:100vh;
     display:flex;
     justify-content:center;

@@ -7,6 +7,13 @@
   font-family: 'Nunito', sans-serif;
 }
 
+html, body {
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   height: 100vh;
   display: flex;

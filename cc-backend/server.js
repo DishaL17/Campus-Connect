@@ -84,11 +84,6 @@ io.on("connection", (socket) => {
   });
 });
 
-const allowedOrigins = [
-  "https://iet-connect-dun.vercel.app",
-  "http://127.0.0.1:5500",
-  "http://localhost:5500"
-];
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -698,6 +693,30 @@ app.get("/api/messages/conversations/:userId", async (req, res) => {
   }
 });
 
+app.get("/api/messages/unread-count/:userId", async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    console.log("Unread count request:", userId);
+
+    const count = await Message.countDocuments({
+      receiverId: userId,
+      isRead: { $ne: true }
+    });
+
+    console.log("Count:", count);
+
+    res.json({ count });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error: error.message,
+      stack: error.stack
+    });
+  }
+});
+
 app.get("/api/messages/:userId1/:userId2", async (req, res) => {
   try {
     const { userId1, userId2 } = req.params;
@@ -729,30 +748,6 @@ app.put("/api/messages/read/:senderId/:receiverId", async (req, res) => {
     res.json({ success: true, message: "Messages marked as read" });
   } catch (error) {
     res.status(500).json({ error: error.message });
-  }
-});
-
-app.get("/api/messages/unread-count/:userId", async (req, res) => {
-  try {
-    const { userId } = req.params;
-
-    console.log("Unread count request:", userId);
-
-    const count = await Message.countDocuments({
-      receiverId: userId,
-      isRead: { $ne: true }
-    });
-
-    console.log("Count:", count);
-
-    res.json({ count });
-
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({
-      error: error.message,
-      stack: error.stack
-    });
   }
 });
 

@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
      --background: linear-gradient(135deg, #bde1dd, #366b6b);
  
@@ -24,6 +28,12 @@
   --bg:        #fff7f5;       
   --surface:   #ffffff;
   --white:     #ffffff;
+  --body_background: linear-gradient(
+    135deg,
+    #dff4f2,
+    #eef8f7,
+    #d8f0ee
+  );
 
   --sidebar-w: 270px;
 
@@ -35,6 +45,15 @@
   --shadow-sm:  0 2px 8px rgba(0,0,0,.06);
   --shadow-md:  0 4px 16px rgba(0,0,0,.08);
   --shadow-lg:  0 8px 24px rgba(0,0,0,.10);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: auto;
 }
 
 .app {border: 1px solid transparent;

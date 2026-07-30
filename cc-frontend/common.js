@@ -1,5 +1,6 @@
 
-window.API_BASE_URL = "https://iet-connect-escl.onrender.com";
+//window.API_BASE_URL = "https://iet-connect-escl.onrender.com";
+window.API_BASE_URL = "http://localhost:5000";
 
 window.getRootPath = function(targetFile) {
   const subfolders = ["/home/", "/item/", "/message/", "/announcement/", "/setting/"];
