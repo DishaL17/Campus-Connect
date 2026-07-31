@@ -84,6 +84,7 @@ html, body {
   background: var(--white);
   box-shadow: var(--shadow-sm);
   position: relative;
+  margin: 6px;
 }
 
 
@@ -234,7 +235,7 @@ box-shadow: 0 8px 20px rgba(94, 163, 163, 0.25);
 box-shadow: 0 8px 20px rgba(94, 163, 163, 0.25); color:  #366b6b; }
 
 .pages {
-  width: 100%;
+  width: auto;
   background: var(--white);
   display: flex;
   justify-content: space-evenly;
@@ -242,7 +243,7 @@ box-shadow: 0 8px 20px rgba(94, 163, 163, 0.25); color:  #366b6b; }
   flex-wrap: wrap;
   gap: 12px;
   padding: 15px;
-  margin: 15px 0;
+  margin: 15px;
   border-radius: var(--radius-lg);
   border: 1.5px solid var(--border);
   box-shadow: var(--shadow-sm);
@@ -287,14 +288,16 @@ box-shadow: 0 8px 20px rgba(94, 163, 163, 0.25); color:  #366b6b; }
 
 
 .act { font-weight: 600; margin: 10px; font-family: Georgia, serif; font-size: 18px; }
-.look { display: flex; justify-content: space-between; align-items: center; margin: 10px; padding-right: 20px; background: transparent;}
+.look { display: flex; justify-content: space-between; align-items: center; margin: 15px; background: transparent;}
 .all  { font-size: 14px; color: var(--muted); border: 2px solid transparent;cursor: pointer; background: transparent;}
 .all:hover{color: teal; transform: scale(1.2, 1.2);}
 .items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-evenly;
+  justify-items: center;
   padding: 10px 0;
+  margin: 15px;
 }
 
 .item {
@@ -491,7 +494,12 @@ color: var(--nvc);
    display: none;
   }
 
-  .pages{display: flex; flex-wrap: wrap;}
+  .pages {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px !important;
+    width: auto !important;
+  }
  
   .main{
     margin: 10px;
@@ -526,11 +534,12 @@ color: var(--nvc);
   }
 
  
-  .items{
+  .items {
     grid-template-columns: 1fr;
     gap: 10px;
-      margin: 10px;
-    padding: 10px;
+    margin: 10px !important;
+    padding: 10px 0 !important;
+    justify-items: center;
   }
 
   .item{
@@ -548,12 +557,13 @@ color: var(--nvc);
   }
 
   
-   .look{
+   .look {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-}
+    width: auto !important;
+    margin: 10px 15px !important;
+  }
   
 }
 
